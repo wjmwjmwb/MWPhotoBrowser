@@ -196,12 +196,13 @@
 #pragma mark - Loading Progress
 
 - (void)setProgressFromNotification:(NSNotification *)notification {
+    __weak __typeof(DACircularProgressView *)weakLoadingIndicator = _loadingIndicator;
     dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *dict = [notification object];
         id <MWPhoto> photoWithProgress = [dict objectForKey:@"photo"];
         if (photoWithProgress == self.photo) {
             float progress = [[dict valueForKey:@"progress"] floatValue];
-            _loadingIndicator.progress = MAX(MIN(1, progress), 0);
+            weakLoadingIndicator.progress = MAX(MIN(1, progress), 0);
         }
     });
 }

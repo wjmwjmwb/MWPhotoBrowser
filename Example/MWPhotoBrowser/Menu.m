@@ -8,8 +8,9 @@
 
 #import <Photos/Photos.h>
 #import "Menu.h"
-#import "SDImageCache.h"
 #import "MWCommon.h"
+#import <SDImageCache.h>
+#import <SDDiskCache.h>
 
 @implementation Menu
 
@@ -21,7 +22,7 @@
 		self.title = @"MWPhotoBrowser";
         
         // Clear cache for testing
-        [[SDImageCache sharedImageCache] clearDisk];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
         [[SDImageCache sharedImageCache] clearMemory];
         
         _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Push", @"Modal", nil]];
