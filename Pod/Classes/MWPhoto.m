@@ -7,7 +7,6 @@
 //
 
 #import <SDWebImage/SDWebImageManager.h>
-#import <SDWebImage/SDImageCodersManager.h>
 #import <Photos/Photos.h>
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"

@@ -10,7 +10,6 @@
 #import "Menu.h"
 #import "MWCommon.h"
 #import <SDImageCache.h>
-#import <SDDiskCache.h>
 
 @implementation Menu
 
